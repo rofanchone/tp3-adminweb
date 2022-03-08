@@ -9,5 +9,5 @@ app.get('/', (req, res) => {
 const port = 80;
 
 app.listen(port, () => {
-    console.log(`Le serveur roule sur: http://192.168.56.103:${port}`)
+    console.log(`Le serveur roule sur: http://${process.env.IPADDR}:${port}`)
 })
