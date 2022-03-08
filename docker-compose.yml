@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  webapp1:
+    image: tp3-adminweb:latest
+    restart: always
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+  
+  webapp2:
+    image: tp3-adminweb:latest
+    restart: always
+    ports:
+      - "8081:80"
+    env_file:
+      - .env
+  
+  reverse-proxy:
+    image: tp3-adminweb-rproxy:latest
+    restart: always
+    ports:
+      - "80:80"
